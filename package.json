@@ -1,0 +1,21 @@
+{
+  "name": "web3",
+  "version": "1.1.0",
+  "description": "A sample project for contract deployment and transaction activation using web3.js",
+  "main": "index.js",
+  "scripts": {
+    "compile": "node src/script/compile.js",
+    "activate": "node src/script/interact.js"
+  },
+  "keywords": [
+    "web3",
+    "smart contract"
+  ],
+  "author": "Jon",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "solc": "^0.8.12",
+    "web3": "^1.7.1"
+  }
+}
