@@ -30,8 +30,8 @@ contract Incrementer {
   /**
    * @notice clear the counter to 0
    */
-  function reset() public {
-    counter = 0;    
+  function reset(uint256 _counter) public {
+    counter = _counter;
   }
 
   /**

@@ -4,8 +4,10 @@
   "description": "A sample project for contract deployment and transaction activation using web3.js",
   "main": "index.js",
   "scripts": {
-    "compile": "node src/script/compile.js",
-    "activate": "node src/script/interact.js"
+    "deploy": "node src/script/deploy.js",
+    "counter": "node src/script/get_counter.js",
+    "increment": "node src/script/increment.js",
+    "reset": "node src/script/reset.js"
   },
   "keywords": [
     "web3",

@@ -5,7 +5,7 @@ const fs = require('fs')
 const contract = fs.readFileSync('src/contract/Incrementer.sol', 'utf-8')
 
 // Compile the contract using solc
-const compileInput = {
+const input_file = {
   language: 'Solidity',
   sources: {
     'Incrementer.sol': {
@@ -22,7 +22,7 @@ const compileInput = {
 }
 
 // The compilation result of the contract
-const compileOutput = JSON.parse(solc.compile(JSON.stringify(compileInput)))
-const contractCore = compileOutput.contracts['Incrementer.sol']['Incrementer']
+const output_file = JSON.parse(solc.compile(JSON.stringify(input_file)))
+const contract_core = output_file.contracts['Incrementer.sol']['Incrementer']
 
-module.exports = contractCore
+module.exports = contract_core
