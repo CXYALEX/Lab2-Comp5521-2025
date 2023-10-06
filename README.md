@@ -1,5 +1,5 @@
 # Lab5-web3
-A sample project for contract deployment and transaction execution using [web3.js](https://github.com/ChainSafe/web3.js).
+A sample project for contract deployment and transaction execution using [Web3.js](https://github.com/ChainSafe/web3.js).
 
 Designed for COMP4142, Department of Computing, PolyU.
 
@@ -10,42 +10,70 @@ This project demonstrates how to compile a Ethereum Smart Contract using `solc`,
 ## Dependency
 
 ```
-dotenv:   ^16.0.3
-solc:     ^0.8.17
-web3:     ^1.8.0
+dotenv:   ^16.3.1
+solc:     ^0.8.21
+web3:     ^4.1.2
 ```
 
 ## Deployment
 
-- Node and npm needed.
-
-- Download this repository to your own device:
+- Run the image to initiate a container:
 
   ```shell
-  $ git clone git@github.com:wurahara/Lab5-web3.git
-  $ cd Lab5-web3
+  $ docker run -d --rm --name web3 \
+      -it crumblejon/smart-contract-web3
   ```
 
-- Configure your node and private key by modifying `src/env/.secret`:
+  This will pull the image `crumblejon/smart-contract-web3` from Docker Hub and run it in Docker.
+
+- Configure your API key and private key by:
 
   ```
-  PROJECT_ID=<your_project_id_here>
-  PRIVATE_KEY=<your_private_key_here>
+  $ docker exec web3 \
+      npm run secret \
+      <your_API_key> <your_private_key>
   ```
 
-  You can get a project id from [infrua](https://infura.io/), and find your private key from metamask. You can refer to the lab recording for more details.
+  You can get an API key from [Infura](https://infura.io/), and find your private key from the MetaMask extension.
 
-- Install the dependencies:
+## Execution
+
+- Deploying the `Incrementor.sol` smart contract:
 
   ```shell
-  $ npm i
+  $ docker exec web3 \
+      npm run deploy
   ```
 
-- Execute the program for contract compilation and deployment:
+  This will deploy the contract to Sepolia Test Network, and return its address on the blockchain.
+
+- Increment the counter by a certain value:
 
   ```shell
-  $ npm run activate
+  $ docker exec web3 \
+      npm run increment \
+      <contract_address> <value>
   ```
+
+  This will add a `value` to the counter in the contract.
+
+- Check the counter state in the contract:
+
+  ```shell
+  $ docker exec web3 \
+      npm run counter \
+      <contract_address>
+  ```
+
+- Reset the counter value to a certain value:
+
+  ```shell
+  $ docker exec web3 \
+      npm run reset \
+      <contract_address> <value>
+  ```
+
+  This will reset the counter value in the contract to the given value.
 
 ## License
 

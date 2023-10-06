@@ -50,7 +50,8 @@ async function deploy() {
 (async () => {
   console.log(`Waiting for contract deployment...`)
   const address = await deploy()
-  console.log(`The contract has been deployed at https://sepolia.etherscan.io/address/${address}`)
+  console.info(`The contract has been deployed at address: ${address}`)
+  console.log(`You can check the state here: https://sepolia.etherscan.io/address/${address}`)
 })()
   .then(() => process.exit(0))
   .catch(error => {

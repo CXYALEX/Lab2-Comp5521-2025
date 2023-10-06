@@ -26,6 +26,9 @@ async function getCounter(address) {
 }
 
 (async () => {
+  if (process.argv.length < 3) {
+    throw new Error('Please provide the contract address as an argument')
+  }
   const address = process.argv[2].trim()
   console.log(`\nQuerying the counter ...`)
   let counter = await getCounter(address)

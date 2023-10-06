@@ -44,6 +44,9 @@ async function reset(value, address) {
 }
 
 (async () => {
+  if (process.argv.length < 4) {
+    throw new Error('Please provide the contract address and value as arguments')
+  }
   const address = process.argv[2].trim()
   const value =  process.argv[3].trim()
   console.log(`\nReseting the counter to ${value} ...`)

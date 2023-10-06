@@ -1,16 +1,16 @@
 {
   "name": "web3",
-  "version": "1.2.0",
+  "version": "2.0.1",
   "description": "A sample project for contract deployment and transaction activation using web3.js",
-  "main": "index.js",
   "scripts": {
     "deploy": "node src/script/deploy.js",
     "counter": "node src/script/get_counter.js",
     "increment": "node src/script/increment.js",
-    "reset": "node src/script/reset.js"
+    "reset": "node src/script/reset.js",
+    "secret": "node src/script/secret.js"
   },
   "keywords": [
-    "web3",
+    "web3.js",
     "smart contract"
   ],
   "author": "Jon",
