@@ -1,7 +1,7 @@
-# Lab5-web3
+# Lab2-Comp5521-2025
 A sample project for contract deployment and transaction execution using [Web3.js](https://github.com/ChainSafe/web3.js).
 
-Designed for COMP4142, Department of Computing, PolyU.
+Designed for COMP5521, Department of Computing, PolyU.
 
 ## Preface
 
